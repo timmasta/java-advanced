@@ -8,12 +8,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DatabaseHandler {
+	//Connection credentials
 	private static final String DB_URL = "jdbc:mysql://localhost:3306/Orders";
 	private static final String USER = "timmasta";
 	private static final String PASSWORD = "Chewbacca82!";
 
 	private Connection connection = null;
 
+	//try a connection, log success or failure
 	public DatabaseHandler() {
 		try {
 			connection = DriverManager.getConnection(DB_URL, USER, PASSWORD);
@@ -40,12 +42,12 @@ public class DatabaseHandler {
 
 	public void insertProduct(String name, String description, double price, int stockQuantity) {
 		String query = "INSERT INTO Products (productName, description, price, stockQuantity) VALUES (?, ?, ?, ?)";
-		try (PreparedStatement pstmt = connection.prepareStatement(query)) {
-			pstmt.setString(1, name);
-			pstmt.setString(2, description);
-			pstmt.setDouble(3, price);
-			pstmt.setInt(4, stockQuantity);
-			pstmt.executeUpdate();
+		try (PreparedStatement prepStat = connection.prepareStatement(query)) {
+			prepStat.setString(1, name);
+			prepStat.setString(2, description);
+			prepStat.setDouble(3, price);
+			prepStat.setInt(4, stockQuantity);
+			prepStat.executeUpdate();
 			System.out.println("Product inserted successfully.");
 		} catch (SQLException e) {
 			System.out.println("Error inserting product.");
@@ -56,15 +58,15 @@ public class DatabaseHandler {
 	public void insertOrder(String dateEntered, String dateLastModified, String orderStatus, int customerID,
 			int quantity, double price, int productID) {
 		String query = "INSERT INTO Orders (dateEntered, dateLastModified, orderStatus, customerID, quantity, price, productID) VALUES (?, ?, ?, ?, ?, ?, ?)";
-		try (PreparedStatement pstmt = connection.prepareStatement(query)) {
-			pstmt.setString(1, dateEntered);
-			pstmt.setString(2, dateLastModified);
-			pstmt.setString(3, orderStatus);
-			pstmt.setInt(4, customerID);
-			pstmt.setInt(5, quantity);
-			pstmt.setDouble(6, price);
-			pstmt.setInt(7, productID);
-			pstmt.executeUpdate();
+		try (PreparedStatement prepStat = connection.prepareStatement(query)) {
+			prepStat.setString(1, dateEntered);
+			prepStat.setString(2, dateLastModified);
+			prepStat.setString(3, orderStatus);
+			prepStat.setInt(4, customerID);
+			prepStat.setInt(5, quantity);
+			prepStat.setDouble(6, price);
+			prepStat.setInt(7, productID);
+			prepStat.executeUpdate();
 			System.out.println("Order inserted successfully.");
 		} catch (SQLException e) {
 			System.out.println("Error inserting order.");
@@ -90,10 +92,10 @@ public class DatabaseHandler {
 
 	public void updateCustomerEmail(int customerID, String newEmail) {
 		String query = "UPDATE Customers SET email = ? WHERE customerID = ?";
-		try (PreparedStatement pstmt = connection.prepareStatement(query)) {
-			pstmt.setString(1, newEmail);
-			pstmt.setInt(2, customerID);
-			pstmt.executeUpdate();
+		try (PreparedStatement prepStat = connection.prepareStatement(query)) {
+			prepStat.setString(1, newEmail);
+			prepStat.setInt(2, customerID);
+			prepStat.executeUpdate();
 			System.out.println("Customer email updated successfully.");
 		} catch (SQLException e) {
 			System.out.println("Error updating customer email.");
@@ -103,9 +105,9 @@ public class DatabaseHandler {
 
 	public void deleteCustomer(int customerID) {
 		String query = "DELETE FROM Customers WHERE customerID = ?";
-		try (PreparedStatement pstmt = connection.prepareStatement(query)) {
-			pstmt.setInt(1, customerID);
-			pstmt.executeUpdate();
+		try (PreparedStatement prepStat = connection.prepareStatement(query)) {
+			prepStat.setInt(1, customerID);
+			prepStat.executeUpdate();
 			System.out.println("Customer deleted successfully.");
 		} catch (SQLException e) {
 			System.out.println("Error deleting customer.");
@@ -117,7 +119,7 @@ public class DatabaseHandler {
 		try {
 			connection.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			// TODO Add more verbose error messages
 			e.printStackTrace();
 		}
 	}

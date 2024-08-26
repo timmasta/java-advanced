@@ -19,9 +19,9 @@ public class DatabaseHandler {
 	public DatabaseHandler() {
 		try {
 			connection = DriverManager.getConnection(DB_URL, USER, PASSWORD);
-			System.out.println("Connection to database established.");
+			AppLog.getLogger().info("Connection to database established.");
 		} catch (SQLException e) {
-			System.out.println("Error connecting to the database.");
+			AppLog.getLogger().info("Error connecting to the database.");
 			e.printStackTrace();
 		}
 	}
@@ -32,10 +32,10 @@ public class DatabaseHandler {
 			prepStat.setString(1, name);
 			prepStat.setString(2, email);
 			prepStat.setString(3, phone);
-			prepStat.executeUpdate();
-			System.out.println("Customer inserted successfully.");
+			prepStat.executeUpdate();			
+			AppLog.getLogger().info("Customer inserted successfully.");
 		} catch (SQLException e) {
-			System.out.println("Error inserting customer.");
+			AppLog.getLogger().info("Error inserting customer.");
 			e.printStackTrace();
 		}
 	}
@@ -48,9 +48,9 @@ public class DatabaseHandler {
 			prepStat.setDouble(3, price);
 			prepStat.setInt(4, stockQuantity);
 			prepStat.executeUpdate();
-			System.out.println("Product inserted successfully.");
+			AppLog.getLogger().info("Product inserted successfully.");
 		} catch (SQLException e) {
-			System.out.println("Error inserting product.");
+			AppLog.getLogger().info("Error inserting product.");
 			e.printStackTrace();
 		}
 	}
@@ -67,9 +67,9 @@ public class DatabaseHandler {
 			prepStat.setDouble(6, price);
 			prepStat.setInt(7, productID);
 			prepStat.executeUpdate();
-			System.out.println("Order inserted successfully.");
+			AppLog.getLogger().info("Order inserted successfully.");
 		} catch (SQLException e) {
-			System.out.println("Error inserting order.");
+			AppLog.getLogger().info("Error inserting order.");
 			e.printStackTrace();
 		}
 	}
@@ -82,10 +82,10 @@ public class DatabaseHandler {
 				String name = rs.getString("customerName");
 				String email = rs.getString("email");
 				String phone = rs.getString("phone");
-				System.out.println("ID: " + id + ", Name: " + name + ", Email: " + email + ", Phone: " + phone);
+				AppLog.getLogger().info("ID: " + id + ", Name: " + name + ", Email: " + email + ", Phone: " + phone);
 			}
 		} catch (SQLException e) {
-			System.out.println("Error retrieving customers.");
+			AppLog.getLogger().info("Error retrieving customers.");
 			e.printStackTrace();
 		}
 	}
@@ -96,9 +96,9 @@ public class DatabaseHandler {
 			prepStat.setString(1, newEmail);
 			prepStat.setInt(2, customerID);
 			prepStat.executeUpdate();
-			System.out.println("Customer email updated successfully.");
+			AppLog.getLogger().info("Customer email updated successfully.");
 		} catch (SQLException e) {
-			System.out.println("Error updating customer email.");
+			AppLog.getLogger().info("Error updating customer email.");
 			e.printStackTrace();
 		}
 	}
@@ -108,9 +108,9 @@ public class DatabaseHandler {
 		try (PreparedStatement prepStat = connection.prepareStatement(query)) {
 			prepStat.setInt(1, customerID);
 			prepStat.executeUpdate();
-			System.out.println("Customer deleted successfully.");
+			AppLog.getLogger().info("Customer deleted successfully.");
 		} catch (SQLException e) {
-			System.out.println("Error deleting customer.");
+			AppLog.getLogger().info("Error deleting customer.");
 			e.printStackTrace();
 		}
 	}

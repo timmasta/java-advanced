@@ -1,0 +1,88 @@
+Aug 25, 2024 9:15:19 PM Main main
+INFO: Application Started. Attempting Database connection.
+Aug 25, 2024 9:15:19 PM DatabaseHandler <init>
+INFO: Connection to database established.
+Aug 25, 2024 9:15:19 PM DatabaseHandler insertCustomer
+INFO: Error inserting customer.
+Aug 25, 2024 9:15:19 PM DatabaseHandler getCustomers
+INFO: ID: 1, Name: Alice Brown, Email: alice.brown@example.com, Phone: 555-1234
+Aug 25, 2024 9:15:19 PM DatabaseHandler getCustomers
+INFO: ID: 2, Name: Charlie Dutch, Email: cdutch@example.com, Phone: 555-5678
+Aug 25, 2024 9:15:19 PM DatabaseHandler getCustomers
+INFO: ID: 3, Name: Edward Frank, Email: edwardf@example.com, Phone: 555-8765
+Aug 25, 2024 9:15:19 PM DatabaseHandler getCustomers
+INFO: ID: 4, Name: Greg Hynes, Email: hynesketchup@example.com, Phone: 555-0912
+Aug 25, 2024 9:15:19 PM DatabaseHandler getCustomers
+INFO: ID: 5, Name: Irving Jones, Email: drj@example.com, Phone: 555-7472
+Aug 25, 2024 9:15:19 PM DatabaseHandler getCustomers
+INFO: ID: 6, Name: Layla Klucko, Email: lcluck@example.com, Phone: 555-9223
+Aug 25, 2024 9:15:19 PM DatabaseHandler getCustomers
+INFO: ID: 7, Name: John Doe, Email: john.doe@example.com, Phone: 555-9876
+Aug 25, 2024 9:19:32 PM Main main
+INFO: Application Started. Attempting Database connection.
+Aug 25, 2024 9:19:33 PM DatabaseHandler <init>
+INFO: Connection to database established.
+Aug 25, 2024 9:19:33 PM DatabaseHandler insertCustomer
+INFO: Error inserting customer.
+Aug 25, 2024 9:19:33 PM DatabaseHandler insertCustomer
+INFO: Error inserting customer.
+Aug 25, 2024 9:19:33 PM DatabaseHandler getCustomers
+INFO: ID: 1, Name: Alice Brown, Email: alice.brown@example.com, Phone: 555-1234
+Aug 25, 2024 9:19:33 PM DatabaseHandler getCustomers
+INFO: ID: 2, Name: Charlie Dutch, Email: cdutch@example.com, Phone: 555-5678
+Aug 25, 2024 9:19:33 PM DatabaseHandler getCustomers
+INFO: ID: 3, Name: Edward Frank, Email: edwardf@example.com, Phone: 555-8765
+Aug 25, 2024 9:19:33 PM DatabaseHandler getCustomers
+INFO: ID: 4, Name: Greg Hynes, Email: hynesketchup@example.com, Phone: 555-0912
+Aug 25, 2024 9:19:33 PM DatabaseHandler getCustomers
+INFO: ID: 5, Name: Irving Jones, Email: drj@example.com, Phone: 555-7472
+Aug 25, 2024 9:19:33 PM DatabaseHandler getCustomers
+INFO: ID: 6, Name: Layla Klucko, Email: lcluck@example.com, Phone: 555-9223
+Aug 25, 2024 9:19:33 PM DatabaseHandler getCustomers
+INFO: ID: 7, Name: John Doe, Email: john.doe@example.com, Phone: 555-9876
+Aug 25, 2024 9:20:52 PM Main main
+INFO: Application Started. Attempting Database connection.
+Aug 25, 2024 9:20:53 PM DatabaseHandler <init>
+INFO: Connection to database established.
+Aug 25, 2024 9:20:53 PM DatabaseHandler insertCustomer
+INFO: Error inserting customer.
+Aug 25, 2024 9:20:53 PM DatabaseHandler insertCustomer
+INFO: Error inserting customer.
+Aug 25, 2024 9:20:53 PM DatabaseHandler getCustomers
+INFO: ID: 1, Name: Alice Brown, Email: alice.brown@example.com, Phone: 555-1234
+Aug 25, 2024 9:20:53 PM DatabaseHandler getCustomers
+INFO: ID: 2, Name: Charlie Dutch, Email: cdutch@example.com, Phone: 555-5678
+Aug 25, 2024 9:20:53 PM DatabaseHandler getCustomers
+INFO: ID: 3, Name: Edward Frank, Email: edwardf@example.com, Phone: 555-8765
+Aug 25, 2024 9:20:53 PM DatabaseHandler getCustomers
+INFO: ID: 4, Name: Greg Hynes, Email: hynesketchup@example.com, Phone: 555-0912
+Aug 25, 2024 9:20:53 PM DatabaseHandler getCustomers
+INFO: ID: 5, Name: Irving Jones, Email: drj@example.com, Phone: 555-7472
+Aug 25, 2024 9:20:53 PM DatabaseHandler getCustomers
+INFO: ID: 6, Name: Layla Klucko, Email: lcluck@example.com, Phone: 555-9223
+Aug 25, 2024 9:20:53 PM DatabaseHandler getCustomers
+INFO: ID: 7, Name: John Doe, Email: john.doe@example.com, Phone: 555-9876
+Aug 25, 2024 9:21:27 PM Main main
+INFO: Application Started. Attempting Database connection.
+Aug 25, 2024 9:21:28 PM DatabaseHandler <init>
+INFO: Connection to database established.
+Aug 25, 2024 9:21:28 PM DatabaseHandler insertCustomer
+INFO: Customer inserted successfully.
+Aug 25, 2024 9:21:28 PM DatabaseHandler insertCustomer
+INFO: Error inserting customer.
+Aug 25, 2024 9:21:28 PM DatabaseHandler getCustomers
+INFO: ID: 1, Name: Alice Brown, Email: alice.brown@example.com, Phone: 555-1234
+Aug 25, 2024 9:21:28 PM DatabaseHandler getCustomers
+INFO: ID: 2, Name: Charlie Dutch, Email: cdutch@example.com, Phone: 555-5678
+Aug 25, 2024 9:21:28 PM DatabaseHandler getCustomers
+INFO: ID: 3, Name: Edward Frank, Email: edwardf@example.com, Phone: 555-8765
+Aug 25, 2024 9:21:28 PM DatabaseHandler getCustomers
+INFO: ID: 4, Name: Greg Hynes, Email: hynesketchup@example.com, Phone: 555-0912
+Aug 25, 2024 9:21:28 PM DatabaseHandler getCustomers
+INFO: ID: 5, Name: Irving Jones, Email: drj@example.com, Phone: 555-7472
+Aug 25, 2024 9:21:28 PM DatabaseHandler getCustomers
+INFO: ID: 6, Name: Layla Klucko, Email: lcluck@example.com, Phone: 555-9223
+Aug 25, 2024 9:21:28 PM DatabaseHandler getCustomers
+INFO: ID: 7, Name: John Doe, Email: john.doe@example.com, Phone: 555-9876
+Aug 25, 2024 9:21:28 PM DatabaseHandler getCustomers
+INFO: ID: 14, Name: John Doe239, Email: john239.doe@example.com, Phone: 555-9876

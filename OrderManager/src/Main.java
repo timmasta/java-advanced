@@ -6,7 +6,7 @@ public class Main {
 		//create a database handler instance that establishes the SQL connection
 		DatabaseHandler dbHandler = new DatabaseHandler();
 		
-		//add a random number for unique name
+		//add a random number for unique name for testing without a UI
 		final Random RANDOM = new Random();
 		int randomNumber = RANDOM.nextInt(1000) + 1;
 		

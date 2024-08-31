@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
+import javax.swing.border.EmptyBorder;
 
 public class UserEntry {
 
@@ -14,10 +15,13 @@ public class UserEntry {
     private JLabel dobLabel;
     private JLabel heightLabel;
     private JLabel nameLabel;
+    
 
     public UserEntry() {
         // Initialize components
         mainPanel = new JPanel(new GridLayout(5, 2, 10, 10));
+        mainPanel.setBorder(new EmptyBorder(0, 10, 0, 0)); // Adds padding (top, left, bottom, right)
+
 
         nameLabel = new JLabel("Name:");
         patientName = new JTextField(20);
@@ -57,10 +61,10 @@ public class UserEntry {
 
     private void customizeComponentColors() {
         // Set colors using hex values
-        nameLabel.setForeground(Color.decode("#0000FF")); // Blue
-        dobLabel.setForeground(Color.decode("#0000FF")); // Blue
-        weightLabel.setForeground(Color.decode("#0000FF")); // Blue
-        heightLabel.setForeground(Color.decode("#0000FF")); // Blue
+        nameLabel.setForeground(Color.decode("#FF00FF")); // Pink
+        dobLabel.setForeground(Color.decode("#FF00FF")); // Pink
+        weightLabel.setForeground(Color.decode("#FF00FF")); // Pink
+        heightLabel.setForeground(Color.decode("#FF00FF")); // Pink
 
         patientName.setBackground(Color.decode("#D3D3D3")); // Light Gray
         patientName.setForeground(Color.decode("#2F4F4F")); // Dark Slate Gray

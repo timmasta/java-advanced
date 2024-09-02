@@ -28,6 +28,8 @@ public class Main {
                 UserEntry userEntry = new UserEntry();
                 frame.setContentPane(userEntry.getMainPanel());
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setSize(500, 600); // Set width and height
+                frame.setMinimumSize(new Dimension(400, 300));
                 frame.pack();
                 frame.setVisible(true);
                 

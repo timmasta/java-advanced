@@ -1,4 +1,8 @@
 import java.util.Random;
+import javax.swing.*;
+import java.awt.*;
+import java.io.*;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -17,7 +21,22 @@ public class Main {
         // Example: Insert a duplicate customer
         dbHandler.insertCustomer("John Doe", "john.doe@example.com", "555-9876");
         
-     
+     // Set up the Swing UI with error handling
+        SwingUtilities.invokeLater(() -> {
+            try {
+                JFrame frame = new JFrame("Order Entry Form");
+                UserEntry userEntry = new UserEntry();
+                frame.setContentPane(userEntry.getMainPanel());
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+                
+                AppLog.getLogger().info("Order Entry form loaded");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "An error occurred while setting up the UI: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                AppLog.getLogger().info("Error loading UI form.");
+            }
+        });
 
         // Example: Fetch and print customers
         dbHandler.getCustomers();

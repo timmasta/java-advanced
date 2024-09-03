@@ -55,12 +55,12 @@ public class DatabaseHandler {
 		}
 	}
 
-	public void insertOrder(String dateEntered, String dateLastModified, String orderStatus, int customerID,
-			int quantity, double price, int productID) {
+	public void insertOrder(String dateEntered, String dateModified, String orderStatus, int customerID,
+			int quantity,double price, int productID) {
 		String query = "INSERT INTO Orders (dateEntered, dateLastModified, orderStatus, customerID, quantity, price, productID) VALUES (?, ?, ?, ?, ?, ?, ?)";
 		try (PreparedStatement prepStat = connection.prepareStatement(query)) {
 			prepStat.setString(1, dateEntered);
-			prepStat.setString(2, dateLastModified);
+			prepStat.setString(2, dateEntered);//new order so copy order date
 			prepStat.setString(3, orderStatus);
 			prepStat.setInt(4, customerID);
 			prepStat.setInt(5, quantity);

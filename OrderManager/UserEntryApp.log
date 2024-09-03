@@ -1446,3 +1446,139 @@ Sep 02, 2024 11:07:09 AM DatabaseHandler getCustomers
 INFO: ID: 66, Name: John Doe115, Email: john115.doe@example.com, Phone: 555-9876
 Sep 02, 2024 11:07:09 AM Main lambda$0
 INFO: Order Entry form loaded
+Sep 02, 2024 8:37:34 PM Main main
+INFO: Application Started. Attempting Database connection.
+Sep 02, 2024 8:37:34 PM DatabaseHandler <init>
+INFO: Connection to database established.
+Sep 02, 2024 8:37:34 PM DatabaseHandler insertCustomer
+INFO: Customer inserted successfully.
+Sep 02, 2024 8:37:34 PM DatabaseHandler insertCustomer
+INFO: Error inserting customer.
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 1, Name: Alice Brown, Email: alice.brown@example.com, Phone: 555-1234
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 2, Name: Charlie Dutch, Email: cdutch@example.com, Phone: 555-5678
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 3, Name: Edward Frank, Email: edwardf@example.com, Phone: 555-8765
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 4, Name: Greg Hynes, Email: hynesketchup@example.com, Phone: 555-0912
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 5, Name: Irving Jones, Email: drj@example.com, Phone: 555-7472
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 6, Name: Layla Klucko, Email: lcluck@example.com, Phone: 555-9223
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 7, Name: John Doe, Email: john.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 14, Name: John Doe239, Email: john239.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 16, Name: John Doe135, Email: john135.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 18, Name: John Doe962, Email: john962.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 20, Name: John Doe288, Email: john288.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 22, Name: John Doe241, Email: john241.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 24, Name: John Doe655, Email: john655.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 26, Name: John Doe287, Email: john287.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 28, Name: John Doe716, Email: john716.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 30, Name: John Doe130, Email: john130.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 32, Name: John Doe784, Email: john784.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 34, Name: John Doe163, Email: john163.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 36, Name: John Doe494, Email: john494.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 38, Name: John Doe469, Email: john469.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 40, Name: John Doe345, Email: john345.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 42, Name: John Doe887, Email: john887.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 44, Name: John Doe567, Email: john567.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 46, Name: John Doe595, Email: john595.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:34 PM DatabaseHandler getCustomers
+INFO: ID: 48, Name: John Doe702, Email: john702.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:35 PM DatabaseHandler getCustomers
+INFO: ID: 50, Name: John Doe570, Email: john570.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:35 PM DatabaseHandler getCustomers
+INFO: ID: 54, Name: John Doe328, Email: john328.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:35 PM DatabaseHandler getCustomers
+INFO: ID: 56, Name: John Doe785, Email: john785.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:35 PM DatabaseHandler getCustomers
+INFO: ID: 58, Name: John Doe114, Email: john114.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:35 PM DatabaseHandler getCustomers
+INFO: ID: 60, Name: John Doe424, Email: john424.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:35 PM DatabaseHandler getCustomers
+INFO: ID: 62, Name: John Doe137, Email: john137.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:35 PM DatabaseHandler getCustomers
+INFO: ID: 64, Name: John Doe21, Email: john21.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:35 PM DatabaseHandler getCustomers
+INFO: ID: 66, Name: John Doe115, Email: john115.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:35 PM DatabaseHandler getCustomers
+INFO: ID: 68, Name: John Doe911, Email: john911.doe@example.com, Phone: 555-9876
+Sep 02, 2024 8:37:35 PM Main lambda$0
+INFO: Order Entry form loaded
+Sep 02, 2024 9:15:23 PM Main main
+INFO: Application Started. Attempting Database connection.
+Sep 02, 2024 9:15:24 PM DatabaseHandler <init>
+INFO: Connection to database established.
+Sep 02, 2024 9:15:24 PM Main lambda$0
+INFO: Order Entry form loaded
+Sep 02, 2024 9:15:35 PM DatabaseHandler insertOrder
+INFO: Error inserting order.
+Sep 02, 2024 9:15:36 PM UserEntry handleSubmit
+INFO: Order details submitted to the database.
+Sep 02, 2024 9:21:53 PM Main main
+INFO: Application Started. Attempting Database connection.
+Sep 02, 2024 9:21:54 PM DatabaseHandler <init>
+INFO: Connection to database established.
+Sep 02, 2024 9:21:54 PM Main lambda$0
+INFO: Order Entry form loaded
+Sep 02, 2024 9:23:38 PM Main main
+INFO: Application Started. Attempting Database connection.
+Sep 02, 2024 9:23:39 PM DatabaseHandler <init>
+INFO: Connection to database established.
+Sep 02, 2024 9:23:40 PM Main lambda$0
+INFO: Order Entry form loaded
+Sep 02, 2024 9:24:00 PM DatabaseHandler insertOrder
+INFO: Error inserting order.
+Sep 02, 2024 9:26:21 PM Main main
+INFO: Application Started. Attempting Database connection.
+Sep 02, 2024 9:26:22 PM DatabaseHandler <init>
+INFO: Connection to database established.
+Sep 02, 2024 9:26:23 PM Main lambda$0
+INFO: Order Entry form loaded
+Sep 02, 2024 9:26:43 PM DatabaseHandler insertOrder
+INFO: Error inserting order.
+Sep 02, 2024 9:28:29 PM Main main
+INFO: Application Started. Attempting Database connection.
+Sep 02, 2024 9:28:29 PM DatabaseHandler <init>
+INFO: Connection to database established.
+Sep 02, 2024 9:28:30 PM Main lambda$0
+INFO: Order Entry form loaded
+Sep 02, 2024 9:28:42 PM DatabaseHandler insertOrder
+INFO: Error inserting order.
+Sep 02, 2024 9:29:22 PM Main main
+INFO: Application Started. Attempting Database connection.
+Sep 02, 2024 9:29:22 PM DatabaseHandler <init>
+INFO: Connection to database established.
+Sep 02, 2024 9:29:23 PM Main lambda$0
+INFO: Order Entry form loaded
+Sep 02, 2024 9:29:34 PM DatabaseHandler insertOrder
+INFO: Error inserting order.
+Sep 02, 2024 9:30:40 PM UserEntry handleSubmit
+INFO: Order details submitted to the database.
+Sep 02, 2024 9:30:46 PM Main main
+INFO: Application Started. Attempting Database connection.
+Sep 02, 2024 9:30:47 PM DatabaseHandler <init>
+INFO: Connection to database established.
+Sep 02, 2024 9:30:47 PM Main lambda$0
+INFO: Order Entry form loaded
+Sep 02, 2024 9:31:20 PM DatabaseHandler insertOrder
+INFO: Order inserted successfully.

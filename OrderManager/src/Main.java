@@ -9,23 +9,13 @@ public class Main {
 		AppLog.getLogger().info("Application Started. Attempting Database connection.");
 		//create a database handler instance that establishes the SQL connection
 		DatabaseHandler dbHandler = new DatabaseHandler();
-		
-		//add a random number for unique name for testing without a UI
-		final Random RANDOM = new Random();
-		int randomNumber = RANDOM.nextInt(1000) + 1;
-		
-		// Example: Insert a 'new' customer
-		String name = "John Doe" + randomNumber;
-        dbHandler.insertCustomer(name, "john" + randomNumber + ".doe@example.com", "555-9876");
-
-        // Example: Insert a duplicate customer
-        dbHandler.insertCustomer("John Doe", "john.doe@example.com", "555-9876");
+				
         
      // Set up the Swing UI with error handling
         SwingUtilities.invokeLater(() -> {
             try {
                 JFrame frame = new JFrame("Order Entry Form");
-                UserEntry userEntry = new UserEntry();
+                UserEntry userEntry = new UserEntry(dbHandler);
                 frame.setContentPane(userEntry.getMainPanel());
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setSize(500, 600); // Set width and height
@@ -41,9 +31,9 @@ public class Main {
         });
 
         // Example: Fetch and print customers
-        dbHandler.getCustomers();
+        //dbHandler.getCustomers();
 
-        dbHandler.closeConnection();
+        //dbHandler.closeConnection();
 
 	}
 

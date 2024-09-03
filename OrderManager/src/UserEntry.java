@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class UserEntry {
 	private JPanel mainPanel;
@@ -8,39 +10,37 @@ public class UserEntry {
     private JSpinner dateEnteredSpinner;
     private JSpinner dateModifiedSpinner;
     private JTextField orderStatus;
-    private JTextField customerID;
+    private JSpinner customerID;
     private JSpinner quantity;
     private JTextField price;
     private JSpinner productID;
     private JButton submitButton;
     private JLabel orderNumberLabel;
-    private JLabel dateEnteredLabel;
-    private JLabel dateModifiedLabel;
+    private JLabel dateEnteredLabel;    
     private JLabel orderStatusLabel;
     private JLabel customerIDLabel;
     private JLabel quantityLabel;
     private JLabel priceLabel;
     private JLabel productIDLabel;
     
-    public UserEntry() {
-    	//initialize the form components
+    private DatabaseHandler dbHandler; // Add a DatabaseHandler instance variable
+    
+    public UserEntry(DatabaseHandler dbHandler) {
+    	this.dbHandler = dbHandler; // Initialize the dbHandler
     	
-        
     	
+    	//initialize the form components    	           	
         orderNumberLabel = new JLabel("Order Number:");
         orderNumber = new JTextField(20);
 
         dateEnteredLabel = new JLabel("Date Entered:");
-        dateEnteredSpinner = new JSpinner(new SpinnerDateModel());
-        
-        dateModifiedLabel = new JLabel("Last Modified:");
-        dateModifiedSpinner = new JSpinner(new SpinnerDateModel());
+        dateEnteredSpinner = new JSpinner(new SpinnerDateModel());                
 
         orderStatusLabel = new JLabel("Status:");
         orderStatus = new JTextField(20);
         
         customerIDLabel = new JLabel("Customer ID:");
-        customerID = new JTextField(20);
+        customerID = new JSpinner(new SpinnerNumberModel(0, 0, 200, 1));
 
         quantityLabel = new JLabel("Quantity:");
         quantity = new JSpinner(new SpinnerNumberModel(0, 0, 300, 1));
@@ -51,8 +51,7 @@ public class UserEntry {
         
         productIDLabel = new JLabel("Product ID:");
         productID = new JSpinner(new SpinnerNumberModel(0, 0, 300, 1));
-    
-        
+            
         mainPanel = new JPanel(new GridBagLayout());
     	GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 5, 5, 5); // add padding around components
@@ -72,14 +71,6 @@ public class UserEntry {
         gbc.gridx = 1;
         gbc.gridy = 1;
         mainPanel.add(dateEnteredSpinner, gbc);
-        
-        gbc.gridx = 0;
-        gbc.gridy = 2;
-        mainPanel.add(dateModifiedLabel, gbc);
-        
-        gbc.gridx = 1;
-        gbc.gridy = 2;
-        mainPanel.add(dateModifiedSpinner, gbc);               
         
         gbc.gridx = 0;
         gbc.gridy = 3;
@@ -132,9 +123,32 @@ public class UserEntry {
     }
     
     private void handleSubmit() {
-        System.out.println("Form submitted!");	
-    }
-    
+    	try {
+            // Extract data from form fields
+            //String orderNum = orderNumber.getText();
+    		Date dateEntered = (Date) dateEnteredSpinner.getValue();            
+            String status = orderStatus.getText();
+            int custID = (Integer) customerID.getValue();
+            int qty = (Integer) quantity.getValue();            
+            int prodID = (Integer) productID.getValue();
+            double pricePlaceholder = 9.99;
+            
+         // Format the dates
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            String formattedDateEntered = dateFormat.format(dateEntered);
+            
+
+            // Use dbHandler to insert the order into the database
+            dbHandler.insertOrder(formattedDateEntered, formattedDateEntered, status, custID, qty, pricePlaceholder, prodID);
+
+            JOptionPane.showMessageDialog(null, "Order details added successfully!");
+            AppLog.getLogger().info("Order details submitted to the database.");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "An error occurred while submitting the order: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            AppLog.getLogger().info("Error submitting order details.");
+        }
+    }    
     public JPanel getMainPanel() {
         return mainPanel;
     }

@@ -1582,3 +1582,71 @@ Sep 02, 2024 9:30:47 PM Main lambda$0
 INFO: Order Entry form loaded
 Sep 02, 2024 9:31:20 PM DatabaseHandler insertOrder
 INFO: Order inserted successfully.
+Sep 02, 2024 9:36:03 PM UserEntry handleSubmit
+INFO: Order details submitted to the database.
+Sep 09, 2024 9:09:50 PM Main main
+INFO: Application Started. Attempting Database connection.
+Sep 09, 2024 9:09:51 PM DatabaseHandler <init>
+INFO: Connection to database established.
+Sep 09, 2024 9:09:51 PM Main lambda$0
+INFO: Options form loaded
+Sep 09, 2024 9:23:39 PM Main main
+INFO: Application Started. Attempting Database connection.
+Sep 09, 2024 9:23:40 PM DatabaseHandler <init>
+INFO: Connection to database established.
+Sep 09, 2024 9:23:40 PM Main lambda$0
+INFO: Options form loaded
+Sep 09, 2024 9:28:13 PM Main main
+INFO: Application Started. Attempting Database connection.
+Sep 09, 2024 9:28:14 PM DatabaseHandler <init>
+INFO: Connection to database established.
+Sep 09, 2024 9:28:14 PM Main lambda$0
+INFO: Options form loaded
+Sep 09, 2024 9:28:16 PM UserOptions lambda$4
+INFO: Order entry form loaded
+Sep 09, 2024 9:28:33 PM Main main
+INFO: Application Started. Attempting Database connection.
+Sep 09, 2024 9:28:34 PM DatabaseHandler <init>
+INFO: Connection to database established.
+Sep 09, 2024 9:28:34 PM Main lambda$0
+INFO: Options form loaded
+Sep 09, 2024 9:28:35 PM UserOptions lambda$4
+INFO: Order entry form loaded
+Sep 09, 2024 9:28:55 PM DatabaseHandler insertOrder
+INFO: Order inserted successfully.
+Sep 09, 2024 9:28:57 PM UserEntry handleSubmit
+INFO: Order details submitted to the database.
+Sep 09, 2024 9:29:55 PM Main main
+INFO: Application Started. Attempting Database connection.
+Sep 09, 2024 9:29:56 PM DatabaseHandler <init>
+INFO: Connection to database established.
+Sep 09, 2024 9:29:56 PM Main lambda$0
+INFO: Options form loaded
+Sep 09, 2024 9:44:35 PM Main main
+INFO: Application Started. Attempting Database connection.
+Sep 09, 2024 9:44:36 PM DatabaseHandler <init>
+INFO: Connection to database established.
+Sep 09, 2024 9:44:36 PM Main lambda$0
+INFO: Options form loaded
+Sep 09, 2024 9:49:38 PM UserOptions lambda$4
+INFO: Order entry form loaded
+Sep 09, 2024 9:49:40 PM Main main
+INFO: Application Started. Attempting Database connection.
+Sep 09, 2024 9:49:41 PM DatabaseHandler <init>
+INFO: Connection to database established.
+Sep 09, 2024 9:49:41 PM Main lambda$0
+INFO: Options form loaded
+Sep 09, 2024 9:49:43 PM UserOptions lambda$4
+INFO: Order entry form loaded
+Sep 09, 2024 9:52:57 PM Main main
+INFO: Application Started. Attempting Database connection.
+Sep 09, 2024 9:52:57 PM DatabaseHandler <init>
+INFO: Connection to database established.
+Sep 09, 2024 9:52:58 PM Main lambda$0
+INFO: Options form loaded
+Sep 09, 2024 9:52:59 PM UserOptions lambda$5
+INFO: Order search form loaded
+Sep 09, 2024 9:53:16 PM DatabaseHandler searchOrderByID
+INFO: Order ID: 13, Date Entered: 2024-12-09, Status: Not-Active, Customer ID: 5, Quantity: 5, Price: 9.99, Product ID: 1
+Sep 09, 2024 9:53:22 PM OrderSearch submitSearch
+INFO: Order details submitted to the database.

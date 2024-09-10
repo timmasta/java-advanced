@@ -46,7 +46,7 @@ public class UserOptions {
         gbc.gridx = 0;
         gbc.gridy = 2;
 		mainPanel.add(modifyButton, gbc);
-        modifyButton.addActionListener(e -> orderEntry());
+        modifyButton.addActionListener(e -> modifyOrder());
         
         gbc.gridx = 0;
         gbc.gridy = 3;
@@ -97,7 +97,34 @@ public class UserOptions {
                     
                     AppLog.getLogger().info("Order search form loaded");
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(null, "An error occurred while setting up the UI: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "An error occurred while setting up search form: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                    AppLog.getLogger().info("Error loading UI form.");
+                }
+            });            
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "An error occurred while submitting the order: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            AppLog.getLogger().info("Error submitting order details.");
+        }
+    }
+	
+	private void modifyOrder() {
+    	try {
+    		// Set up the Swing UI with error handling
+            SwingUtilities.invokeLater(() -> {
+                try {
+                    JFrame frame = new JFrame("Modify an Order");
+                    OrderModify orderModify = new OrderModify(dbHandler);
+                    frame.setContentPane(orderModify.getMainPanel());
+                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    frame.setSize(500, 600); // Set width and height
+                    frame.setMinimumSize(new Dimension(400, 300));
+                    frame.pack();
+                    frame.setVisible(true);
+                    
+                    AppLog.getLogger().info("Modify order form loaded");
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "An error occurred while setting up the modify order form: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                     AppLog.getLogger().info("Error loading UI form.");
                 }
             });            

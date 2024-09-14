@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class DatabaseHandler {
 	//Connection credentials
@@ -115,12 +117,19 @@ public class DatabaseHandler {
 	    }
 	}
 	
-	public void generateReport(String startDate, String endDate) {
+	public void generateReport(Date startDate, Date endDate) {
 	    String query = "SELECT * FROM Orders WHERE dateEntered BETWEEN ? AND ?";
+
+	    // Convert Date objects to formatted strings (e.g., yyyy-MM-dd)
+	    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	    String formattedStartDate = dateFormat.format(startDate);
+	    String formattedEndDate = dateFormat.format(endDate);
+
 	    try (PreparedStatement prepStat = connection.prepareStatement(query)) {
-	        prepStat.setString(1, startDate);
-	        prepStat.setString(2, endDate);
-	        
+	        // Set the formatted date strings in the prepared statement
+	        prepStat.setString(1, formattedStartDate);
+	        prepStat.setString(2, formattedEndDate);
+
 	        try (ResultSet rs = prepStat.executeQuery()) {
 	            while (rs.next()) {
 	                int orderNumber = rs.getInt("orderNumber");
@@ -131,14 +140,14 @@ public class DatabaseHandler {
 	                double price = rs.getDouble("price");
 	                int productID = rs.getInt("productID");
 
-	                // Log or print the details (you can replace this with UI pop-up)
+	                // Log or print the details (or show in a UI pop-up)
 	                AppLog.getLogger().info("Order Number: " + orderNumber + ", Date Entered: " + dateEntered +
 	                    ", Status: " + orderStatus + ", Customer ID: " + customerID + ", Quantity: " + quantity + 
 	                    ", Price: " + price + ", Product ID: " + productID);
 	            }
 	        }
 	    } catch (SQLException e) {
-	        AppLog.getLogger().info("Error generating report for date range: " + startDate + " to " + endDate);
+	        AppLog.getLogger().info("Error generating report for date range: " + formattedStartDate + " to " + formattedEndDate);
 	        e.printStackTrace();
 	    }
 	}

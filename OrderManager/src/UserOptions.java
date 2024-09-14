@@ -51,7 +51,7 @@ public class UserOptions {
         gbc.gridx = 0;
         gbc.gridy = 3;
 		mainPanel.add(reportButton, gbc);
-        reportButton.addActionListener(e -> orderEntry());
+        reportButton.addActionListener(e -> generateReport());
 	}
 	
 	private void orderEntry() {
@@ -125,6 +125,33 @@ public class UserOptions {
                     AppLog.getLogger().info("Modify order form loaded");
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, "An error occurred while setting up the modify order form: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                    AppLog.getLogger().info("Error loading UI form.");
+                }
+            });            
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "An error occurred while submitting the order: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            AppLog.getLogger().info("Error submitting order details.");
+        }
+    }
+	
+	private void generateReport() {
+    	try {
+    		// Set up the Swing UI with error handling
+            SwingUtilities.invokeLater(() -> {
+                try {
+                    JFrame frame = new JFrame("Generate Sales Report");
+                    GenerateReport generateReport = new GenerateReport(dbHandler);
+                    frame.setContentPane(generateReport.getMainPanel());
+                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    frame.setSize(500, 600); // Set width and height
+                    frame.setMinimumSize(new Dimension(400, 300));
+                    frame.pack();
+                    frame.setVisible(true);
+                    
+                    AppLog.getLogger().info("Generate report form loaded");
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "An error occurred while setting up the Generate Report form: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                     AppLog.getLogger().info("Error loading UI form.");
                 }
             });            

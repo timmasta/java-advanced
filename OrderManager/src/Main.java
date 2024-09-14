@@ -14,16 +14,16 @@ public class Main {
      // Set up the Swing UI with error handling
         SwingUtilities.invokeLater(() -> {
             try {
-                JFrame frame = new JFrame("Order Entry Form");
-                UserEntry userEntry = new UserEntry(dbHandler);
-                frame.setContentPane(userEntry.getMainPanel());
+                JFrame frame = new JFrame("Choose an Option");
+                UserOptions userOptions = new UserOptions(dbHandler);
+                frame.setContentPane(userOptions.getMainPanel());
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setSize(500, 600); // Set width and height
                 frame.setMinimumSize(new Dimension(400, 300));
                 frame.pack();
                 frame.setVisible(true);
                 
-                AppLog.getLogger().info("Order Entry form loaded");
+                AppLog.getLogger().info("Options form loaded");
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "An error occurred while setting up the UI: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                 AppLog.getLogger().info("Error loading UI form.");

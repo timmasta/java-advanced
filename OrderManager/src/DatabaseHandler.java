@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class DatabaseHandler {
 	//Connection credentials
@@ -73,6 +75,83 @@ public class DatabaseHandler {
 			e.printStackTrace();
 		}
 	}
+	
+	public void updateOrderStatus(int orderID, String newStatus) {
+	    String query = "UPDATE Orders SET orderStatus = ? WHERE orderNumber = ?";
+	    try (PreparedStatement prepStat = connection.prepareStatement(query)) {
+	        prepStat.setString(1, newStatus);
+	        prepStat.setInt(2, orderID);
+	        prepStat.executeUpdate();
+	        AppLog.getLogger().info("Order status updated successfully for orderNumber: " + orderID);
+	    } catch (SQLException e) {
+	        AppLog.getLogger().info("Error updating order status for orderNumber: " + orderID);
+	        e.printStackTrace();
+	    }
+	}
+	
+	public void searchOrderByID(int orderID) {
+	    String query = "SELECT * FROM Orders WHERE orderNumber = ?";
+	    try (PreparedStatement prepStat = connection.prepareStatement(query)) {
+	        prepStat.setInt(1, orderID);
+	        try (ResultSet rs = prepStat.executeQuery()) {
+	            if (rs.next()) {
+	                String dateEntered = rs.getString("dateEntered");
+	                String dateLastModified = rs.getString("dateLastModified");
+	                String orderStatus = rs.getString("orderStatus");
+	                int customerID = rs.getInt("customerID");
+	                int quantity = rs.getInt("quantity");
+	                double price = rs.getDouble("price");
+	                int productID = rs.getInt("productID");
+
+	                // Log or print the details (replace this with UI pop-up by returning a structure of values)
+	                AppLog.getLogger().info("Order ID: " + orderID + ", Date Entered: " + dateEntered + 
+	                    ", Status: " + orderStatus + ", Customer ID: " + customerID + ", Quantity: " + quantity +
+	                    ", Price: " + price + ", Product ID: " + productID);
+	            } else {
+	                AppLog.getLogger().info("No order found with ID: " + orderID);
+	            }
+	        }
+	    } catch (SQLException e) {
+	        AppLog.getLogger().info("Error retrieving order details for orderNumber: " + orderID);
+	        e.printStackTrace();
+	    }
+	}
+	
+	public void generateReport(Date startDate, Date endDate) {
+	    String query = "SELECT * FROM Orders WHERE dateEntered BETWEEN ? AND ?";
+
+	    // Convert Date objects to formatted strings (e.g., yyyy-MM-dd)
+	    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	    String formattedStartDate = dateFormat.format(startDate);
+	    String formattedEndDate = dateFormat.format(endDate);
+
+	    try (PreparedStatement prepStat = connection.prepareStatement(query)) {
+	        // Set the formatted date strings in the prepared statement
+	        prepStat.setString(1, formattedStartDate);
+	        prepStat.setString(2, formattedEndDate);
+
+	        try (ResultSet rs = prepStat.executeQuery()) {
+	            while (rs.next()) {
+	                int orderNumber = rs.getInt("orderNumber");
+	                String dateEntered = rs.getString("dateEntered");
+	                String orderStatus = rs.getString("orderStatus");
+	                int customerID = rs.getInt("customerID");
+	                int quantity = rs.getInt("quantity");
+	                double price = rs.getDouble("price");
+	                int productID = rs.getInt("productID");
+
+	                // Log or print the details (or show in a UI pop-up)
+	                AppLog.getLogger().info("Order Number: " + orderNumber + ", Date Entered: " + dateEntered +
+	                    ", Status: " + orderStatus + ", Customer ID: " + customerID + ", Quantity: " + quantity + 
+	                    ", Price: " + price + ", Product ID: " + productID);
+	            }
+	        }
+	    } catch (SQLException e) {
+	        AppLog.getLogger().info("Error generating report for date range: " + formattedStartDate + " to " + formattedEndDate);
+	        e.printStackTrace();
+	    }
+	}
+
 
 	public void getCustomers() {
 		String query = "SELECT * FROM Customers";
